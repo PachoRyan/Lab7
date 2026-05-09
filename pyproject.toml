@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello"
+version = "0.1.0"
+description = "A simple hello project"
+dependencies = [
+    "pytest==7.4.3",
+    "pytest-cov==4.1.0"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
