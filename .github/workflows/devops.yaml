@@ -35,8 +35,10 @@ jobs:       # ← todos los jobs van anidados aquí
           pip install -r requirements.txt
 
       - name: Test on ${{ matrix.os }} with Python ${{ matrix.python-version }}
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: |
-          pytest -q
+          python -m pytest -q
 
       - name: Compute build tag
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
